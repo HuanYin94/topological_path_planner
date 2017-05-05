@@ -7,7 +7,7 @@ function [ point ] = loadData( fileName, blank)
     [height, width]=size(raw);
     
     count = 1;
-    for i = 1 : (blank+1) : height
+    for i = 1 : blank : 1000000
         point{count} = raw(i, :);  
         count = count + 1;
     end

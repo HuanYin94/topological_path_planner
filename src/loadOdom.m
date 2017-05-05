@@ -15,6 +15,5 @@ function [ pose ] = loadOdom( odom, blank)
         plot3(p(1,4),p(2,4),p(3,4),'k.')
     end
 
-
 end
 

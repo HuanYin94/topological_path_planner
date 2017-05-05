@@ -1,0 +1,12 @@
+{
+  "targets": [
+    {
+      "id": 1,
+      "pathpoint": [
+        { "transform":[ 1, 0, 0, 1, 0, 0, 0 ], "turn_light": 0 },
+        { "transform":[ 2, 0, 0, 1, 0, 0, 0 ], "turn_light": 1 },
+        { "transform":[ 3, 0, 0, 1, 0, 0, 0 ], "turn_light": 2 }
+      ]
+    }
+  ]
+}
