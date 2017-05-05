@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+  <node_list>
+    <node>
+      <id>0</id>
+      <neighbour_list>
+        <neighbour>
+          <id>3</id>
+          <transform>25.0105 14.6071 -1.09037 0.706999 -0.00615392 0.0041365 0.707176</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>82</id>
+          <transform>-27.6778 -0.334213 0.0396333 0.998933 -0.00258124 0.00941311 -0.0451409</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>83</id>
+          <transform>-7.96487 -1.24525 0.12846 0.997234 0.00151009 0.0176534 -0.0721788</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>84</id>
+          <transform>2.32764 0.263242 -0.0803642 0.998299 0.00178369 0.0288858 0.0506215</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>114</id>
+          <transform>26.3424 0.457587 -0.991206 0.940448 -0.00194712 0.0308191 -0.338532</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>3</id>
+      <neighbour_list>
+        <neighbour>
+          <id>0</id>
+          <transform>-14.6157 25.0112 0.949089 0.706999 0.00615392 -0.0041365 -0.707176</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>47</id>
+          <transform>-19.83 -21.8642 0.0560699 0.625741 0.0158385 -0.0488871 0.778336</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>112</id>
+          <transform>12.289 0.775657 -0.541864 0.0415021 -0.0339719 -0.00942957 0.998516</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>11</id>
+      <neighbour_list>
+        <neighbour>
+          <id>12</id>
+          <transform>19.6925 -2.91007 -0.947055 0.995308 0.00105855 0.00144483 -0.0967457</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>105</id>
+          <transform>-8.63512 -14.3998 0.158322 0.76046 0.00203059 0.0158661 0.649188</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>107</id>
+          <transform>-15.0262 1.94565 0.0982335 0.157395 0.0102185 -0.0115395 0.987415</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>12</id>
+      <neighbour_list>
+        <neighbour>
+          <id>11</id>
+          <transform>-19.8871 -0.935184 0.887498 0.995308 -0.00105855 -0.00144483 0.0967457</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>13</id>
+          <transform>19.9895 1.38899 -0.752214 0.990955 0.0016689 9.29698e-05 0.134186</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>13</id>
+      <neighbour_list>
+        <neighbour>
+          <id>12</id>
+          <transform>-19.6389 3.97964 0.744133 0.990955 -0.0016689 -9.29698e-05 -0.134186</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>14</id>
+          <transform>14.8805 -3.08781 -0.612643 0.991457 -0.00104208 -0.00145974 -0.130422</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>14</id>
+      <neighbour_list>
+        <neighbour>
+          <id>13</id>
+          <transform>-15.1708 -0.866643 0.659223 0.991457 0.00104208 0.00145974 0.130422</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>15</id>
+          <transform>20.0795 0.0059824 -0.608768 0.998274 0.00254084 -0.0034928 0.0585758</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>15</id>
+      <neighbour_list>
+        <neighbour>
+          <id>14</id>
+          <transform>-19.9375 2.34554 0.742826 0.998274 -0.00254084 0.0034928 -0.0585758</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>16</id>
+          <transform>19.8291 -1.30571 -0.752942 0.999986 -2.46899e-05 -0.00407269 -0.00325968</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>16</id>
+      <neighbour_list>
+        <neighbour>
+          <id>15</id>
+          <transform>-19.8304 1.17639 0.914527 0.999986 2.46899e-05 0.00407269 0.00325968</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>18</id>
+          <transform>20.0296 -10.9173 -0.632214 0.725012 -0.0150651 -0.0191432 -0.688305</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>18</id>
+      <neighbour_list>
+        <neighbour>
+          <id>16</id>
+          <transform>-11.8955 -19.4316 1.29825 0.725012 0.0150651 0.0191432 0.688305</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>19</id>
+          <transform>19.8691 -2.71055 -0.758261 0.997615 0.00702753 -0.00430066 -0.0685237</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>19</id>
+      <neighbour_list>
+        <neighbour>
+          <id>18</id>
+          <transform>-20.0468 -0.0194066 0.911379 0.997615 -0.00702753 0.00430066 0.0685237</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>20</id>
+          <transform>20.0804 0.930241 -0.851221 0.998966 0.000577121 0.00249071 0.0453942</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>20</id>
+      <neighbour_list>
+        <neighbour>
+          <id>19</id>
+          <transform>-20.086 0.895894 0.751094 0.998966 -0.000577121 -0.00249071 -0.0453942</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>21</id>
+      <neighbour_list>
+        <neighbour>
+          <id>23</id>
+          <transform>22.3806 -8.18922 -0.431237 0.753617 -0.0346403 -0.00485767 -0.656382</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>23</id>
+      <neighbour_list>
+        <neighbour>
+          <id>21</id>
+          <transform>-11.171 -21.0558 0.0560872 0.753617 0.0346403 0.00485767 0.656382</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>24</id>
+          <transform>15.4754 -3.00249 -0.569678 0.99513 0.0170918 -0.00456294 -0.0969678</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>24</id>
+      <neighbour_list>
+        <neighbour>
+          <id>23</id>
+          <transform>-15.7603 -0.0200402 0.661677 0.99513 -0.0170918 0.00456294 0.0969678</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>25</id>
+          <transform>19.9244 2.31233 -0.74471 0.99296 -0.0234308 0.00821159 0.11582</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>25</id>
+      <neighbour_list>
+        <neighbour>
+          <id>24</id>
+          <transform>-19.9343 2.30948 0.415018 0.99296 0.0234308 -0.00821159 -0.11582</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>27</id>
+      <neighbour_list>
+        <neighbour>
+          <id>29</id>
+          <transform>28.5789 -2.69772 -1.40082 0.923643 -0.0213222 0.00741432 -0.382589</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>29</id>
+      <neighbour_list>
+        <neighbour>
+          <id>27</id>
+          <transform>-22.1131 -18.3467 0.632649 0.923643 0.0213222 -0.00741432 0.382589</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>30</id>
+          <transform>10.9346 -3.02841 -0.478223 0.989601 -0.00873851 0.00730604 -0.143386</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>30</id>
+      <neighbour_list>
+        <neighbour>
+          <id>29</id>
+          <transform>-11.3493 -0.207575 0.338614 0.989601 0.00873851 -0.00730604 0.143386</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>31</id>
+          <transform>20.1183 0.320704 -0.558685 0.999885 0.00299056 -0.00501071 0.0139725</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>31</id>
+      <neighbour_list>
+        <neighbour>
+          <id>30</id>
+          <transform>-20.1127 0.245434 0.760519 0.999885 -0.00299056 0.00501071 -0.0139725</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>32</id>
+          <transform>19.9752 -1.65619 -0.758365 0.996362 -0.0056745 0.00278984 -0.0849898</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>32</id>
+      <neighbour_list>
+        <neighbour>
+          <id>31</id>
+          <transform>-19.9703 -1.75917 0.64593 0.996362 0.0056745 -0.00278984 0.0849898</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>33</id>
+          <transform>19.7427 -2.96481 -0.624158 0.99192 -0.000691242 -0.001943 -0.126847</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>33</id>
+      <neighbour_list>
+        <neighbour>
+          <id>32</id>
+          <transform>-19.8508 -2.09933 0.702318 0.99192 0.000691242 0.001943 0.126847</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>34</id>
+          <transform>20.0802 -0.298864 -0.360186 0.993597 0.000255281 -0.0303732 -0.108824</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>34</id>
+      <neighbour_list>
+        <neighbour>
+          <id>33</id>
+          <transform>-19.6104 -4.04776 1.57445 0.993597 -0.000255281 0.0303732 0.108824</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>35</id>
+          <transform>19.2145 -3.00737 -0.715652 0.947202 -0.0300311 0.0194255 -0.318637</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>35</id>
+      <neighbour_list>
+        <neighbour>
+          <id>34</id>
+          <transform>-17.1298 -9.23429 -0.227133 0.947202 0.0300311 -0.0194255 0.318637</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>38</id>
+      <neighbour_list>
+        <neighbour>
+          <id>39</id>
+          <transform>11.6233 -3.00936 -0.619804 0.991645 -0.00278723 0.0129717 -0.128311</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>39</id>
+      <neighbour_list>
+        <neighbour>
+          <id>38</id>
+          <transform>-12.0182 -0.0522844 0.318863 0.991645 0.00278723 -0.0129717 0.128311</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>93</id>
+          <transform>17.6719 4.47933 -1.39379 0.663213 0.0430093 0.0410704 -0.746064</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>94</id>
+          <transform>15.5324 -15.52 -2.18844 0.642406 -0.00752646 0.0156229 -0.766168</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>47</id>
+      <neighbour_list>
+        <neighbour>
+          <id>3</id>
+          <transform>16.9676 -23.9812 -2.87736 0.625741 -0.0158385 0.0488871 -0.778336</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>87</id>
+          <transform>-15.3201 0.96757 0.495534 0.153002 0.0207422 -0.0128809 0.987924</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>114</id>
+          <transform>18.7016 -9.39545 -2.18564 0.437629 0.0301036 -0.00207802 0.898649</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>115</id>
+          <transform>10.1019 -3.21795 -1.09622 0.316729 0.0394983 0.00535431 0.947678</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>57</id>
+      <neighbour_list>
+        <neighbour>
+          <id>59</id>
+          <transform>12.5851 10.2096 -0.211673 0.810954 -0.00367493 -0.0155048 0.584893</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>121</id>
+          <transform>-11.9633 -1.54593 0.336985 0.996219 0.00351482 0.0224311 -0.0838625</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>59</id>
+      <neighbour_list>
+        <neighbour>
+          <id>57</id>
+          <transform>-13.6503 8.70835 0.706472 0.810954 0.00367493 0.0155048 -0.584893</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>60</id>
+          <transform>19.981 1.40421 -0.730179 0.999531 -6.93695e-05 0.00231383 0.0305243</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>60</id>
+      <neighbour_list>
+        <neighbour>
+          <id>59</id>
+          <transform>-20.0327 -0.18234 0.63744 0.999531 6.93695e-05 -0.00231383 -0.0305243</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>61</id>
+          <transform>19.952 0.967049 -0.582215 0.999908 -0.00357199 -0.00603616 -0.0116131</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>61</id>
+      <neighbour_list>
+        <neighbour>
+          <id>60</id>
+          <transform>-19.9157 -1.43507 0.814304 0.999908 0.00357199 0.00603616 0.0116131</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>62</id>
+          <transform>20.069 0.0664722 -0.770968 0.999315 -0.00335237 -0.00131269 0.0368251</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>62</id>
+      <neighbour_list>
+        <neighbour>
+          <id>61</id>
+          <transform>-20.0176 1.40536 0.828117 0.999315 0.00335237 0.00131269 -0.0368251</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>64</id>
+          <transform>16.859 -9.0617 -0.866366 0.828497 0.00630694 0.00154451 -0.559956</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>64</id>
+      <neighbour_list>
+        <neighbour>
+          <id>62</id>
+          <transform>-14.7026 -12.2569 0.831851 0.828497 -0.00630694 -0.00154451 0.559956</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>65</id>
+          <transform>13.0537 -3.02919 -0.31251 0.99097 -0.015599 -0.015039 -0.13232</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>65</id>
+      <neighbour_list>
+        <neighbour>
+          <id>64</id>
+          <transform>-13.3731 -0.516254 0.75312 0.99097 0.015599 0.015039 0.13232</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>66</id>
+          <transform>19.9924 -2.04363 -0.870265 0.998761 -0.00469152 -2.58921e-05 -0.049549</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>66</id>
+      <neighbour_list>
+        <neighbour>
+          <id>65</id>
+          <transform>-20.0961 0.0465857 0.881123 0.998761 0.00469152 2.58921e-05 0.049549</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>67</id>
+          <transform>20.0071 0.24781 -0.682896 0.992417 0.00780131 -0.00139035 0.122659</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>67</id>
+      <neighbour_list>
+        <neighbour>
+          <id>66</id>
+          <transform>-19.4621 4.64135 0.703654 0.992417 -0.00780131 0.00139035 -0.122659</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>68</id>
+      <neighbour_list>
+        <neighbour>
+          <id>70</id>
+          <transform>19.2089 -9.55557 -1.1024 0.765701 0.00540382 0.0170127 -0.642949</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>70</id>
+      <neighbour_list>
+        <neighbour>
+          <id>68</id>
+          <transform>-12.7596 -17.2771 0.446597 0.765701 -0.00540382 -0.0170127 0.642949</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>71</id>
+          <transform>20.1595 0.412878 -0.847798 0.998969 -0.0209937 0.000679628 -0.0402571</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>71</id>
+      <neighbour_list>
+        <neighbour>
+          <id>70</id>
+          <transform>-20.0607 -2.06766 0.768306 0.998969 0.0209937 -0.000679628 0.0402571</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>72</id>
+          <transform>19.9989 -0.0262804 -0.475853 0.999758 0.00480916 -0.00725484 0.0202087</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>72</id>
+      <neighbour_list>
+        <neighbour>
+          <id>71</id>
+          <transform>-19.9724 0.840197 0.76174 0.999758 -0.00480916 0.00725484 -0.0202087</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>73</id>
+          <transform>19.9713 -2.13062 -0.968093 0.999824 0.00527696 0.00342412 -0.0176591</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>73</id>
+      <neighbour_list>
+        <neighbour>
+          <id>72</id>
+          <transform>-20.0404 1.43332 0.812254 0.999824 -0.00527696 -0.00342412 0.0176591</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>74</id>
+          <transform>20.1353 -0.0575645 -0.681296 0.997658 0.00290581 -0.00107234 -0.0683325</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>74</id>
+      <neighbour_list>
+        <neighbour>
+          <id>73</id>
+          <transform>-19.9538 -2.68414 0.732036 0.997658 -0.00290581 0.00107234 0.0683325</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>75</id>
+          <transform>20.0443 2.01259 -0.791302 0.99901 0.00177982 -0.00529161 0.0441356</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>75</id>
+      <neighbour_list>
+        <neighbour>
+          <id>74</id>
+          <transform>-20.1341 -0.234332 1.00812 0.99901 -0.00177982 0.00529161 -0.0441356</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>76</id>
+          <transform>20.1187 -0.0363448 -0.619381 0.999887 -0.00483902 -0.00669923 -0.0125631</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>78</id>
+          <transform>26.9779 -11.1678 -0.472695 0.724884 -0.0115292 -0.0207189 -0.688463</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>76</id>
+      <neighbour_list>
+        <neighbour>
+          <id>75</id>
+          <transform>-20.103 -0.47631 0.886737 0.999887 0.00483902 0.00669923 0.0125631</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>78</id>
+          <transform>7.16228 -10.9875 -0.20054 0.73367 -0.0134545 -0.0133361 -0.679241</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>78</id>
+      <neighbour_list>
+        <neighbour>
+          <id>75</id>
+          <transform>-12.5003 -26.356 1.35951 0.724884 0.0115292 0.0207189 0.688463</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>76</id>
+          <transform>-11.4903 -6.29645 0.625621 0.73367 0.0134545 0.0133361 0.679241</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>79</id>
+          <transform>20.0637 -0.886574 -0.39437 0.998801 0.00810027 -0.0281922 0.039198</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>79</id>
+      <neighbour_list>
+        <neighbour>
+          <id>78</id>
+          <transform>-19.8786 2.46943 1.49457 0.998801 -0.00810027 0.0281922 -0.039198</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>80</id>
+          <transform>20.0849 0.131366 -0.580539 0.996727 0.000296117 -0.0079646 0.0804518</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>80</id>
+      <neighbour_list>
+        <neighbour>
+          <id>79</id>
+          <transform>-19.8342 3.09118 0.898643 0.996727 -0.000296117 0.0079646 -0.0804518</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>81</id>
+          <transform>19.965 2.36204 -0.82418 0.995959 -0.0189611 -0.000227807 -0.0877891</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>81</id>
+      <neighbour_list>
+        <neighbour>
+          <id>80</id>
+          <transform>-19.2411 -5.84646 0.676874 0.995959 0.0189611 0.000227807 0.0877891</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>124</id>
+          <transform>23.4435 -16.5498 -1.53173 0.74504 0.0169761 0.0394162 0.665637</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>82</id>
+      <neighbour_list>
+        <neighbour>
+          <id>0</id>
+          <transform>27.5307 2.82787 0.488775 0.998933 0.00258124 -0.00941311 0.0451409</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>83</id>
+          <transform>20.019 0.870611 0.490149 0.999571 0.00242171 0.00784788 -0.028122</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>124</id>
+          <transform>0.170123 -10.8504 -0.151672 0.696822 -0.0209544 -0.00070839 0.716938</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>83</id>
+      <neighbour_list>
+        <neighbour>
+          <id>0</id>
+          <transform>7.70227 2.37924 0.143397 0.997234 -0.00151009 -0.0176534 0.0721788</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>82</id>
+          <transform>-19.9282 -1.99761 -0.796836 0.999571 -0.00242171 -0.00784788 0.028122</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>84</id>
+          <transform>9.91908 2.97388 0.07616 0.992315 -0.00431429 0.0101795 0.123245</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>84</id>
+      <neighbour_list>
+        <neighbour>
+          <id>0</id>
+          <transform>-2.34308 -0.0263541 -0.0542655 0.998299 -0.00178369 -0.0288858 -0.0506215</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>83</id>
+          <transform>-10.3412 -0.455937 -0.298909 0.992315 0.00431429 -0.0101795 -0.123245</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>114</id>
+          <transform>23.9327 -2.24618 0.45232 0.923008 0.00654822 0.00400179 -0.384705</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>87</id>
+      <neighbour_list>
+        <neighbour>
+          <id>47</id>
+          <transform>-14.9039 -3.70818 0.103307 -0.153002 0.0207422 -0.0128809 0.987924</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>88</id>
+          <transform>19.8478 -2.07845 0.236012 0.999865 0.0131527 0.0013446 -0.00979122</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>88</id>
+      <neighbour_list>
+        <neighbour>
+          <id>87</id>
+          <transform>-19.8838 1.68181 -0.338906 0.999865 -0.0131527 -0.0013446 0.00979121</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>89</id>
+          <transform>18.3697 4.13772 0.829739 0.988609 0.00355832 -0.00413837 0.150409</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>89</id>
+      <neighbour_list>
+        <neighbour>
+          <id>88</id>
+          <transform>-18.776 1.50833 -0.664781 0.988609 -0.00355832 0.00413838 -0.150409</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>90</id>
+          <transform>14.1507 3.03952 0.16851 0.901082 -0.0497133 0.0195192 0.430348</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>91</id>
+          <transform>18.68 13.3768 -0.849651 0.828953 -0.0539333 0.0304965 0.555876</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>90</id>
+      <neighbour_list>
+        <neighbour>
+          <id>89</id>
+          <transform>-11.2368 9.11572 -0.383224 0.901082 0.0497133 -0.0195192 -0.430347</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>91</id>
+          <transform>11.0854 3.06483 0.363785 0.989189 0.00324362 0.00435243 0.146543</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>91</id>
+      <neighbour_list>
+        <neighbour>
+          <id>89</id>
+          <transform>-19.4789 12.1974 -0.630909 0.828953 0.0539333 -0.0304965 -0.555876</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>90</id>
+          <transform>-11.4947 0.277618 -0.453999 0.989189 -0.00324362 -0.00435244 -0.146543</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>92</id>
+          <transform>19.7153 2.18369 0.90454 0.998652 -0.00362717 -0.0134657 0.0500002</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>92</id>
+      <neighbour_list>
+        <neighbour>
+          <id>91</id>
+          <transform>-19.8519 -0.19799 -0.379674 0.998652 0.00362717 0.0134657 -0.0500002</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>93</id>
+          <transform>19.8151 0.553261 0.322332 0.999483 -0.00317024 0.0121299 0.0295977</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>93</id>
+      <neighbour_list>
+        <neighbour>
+          <id>39</id>
+          <transform>6.31204 -17.0327 2.08536 0.663213 -0.0430093 -0.0410704 0.746064</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>92</id>
+          <transform>-19.7994 0.623413 -0.802875 0.999483 0.00317024 -0.0121299 -0.0295977</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>94</id>
+          <transform>19.8727 0.0994339 1.08454 0.998222 -0.0241962 -0.0434282 -0.0328969</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>94</id>
+      <neighbour_list>
+        <neighbour>
+          <id>39</id>
+          <transform>-12.5893 -18.0624 1.47475 0.642406 0.00752646 -0.0156229 0.766168</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>93</id>
+          <transform>-19.8441 -1.39675 0.607091 0.998222 0.0241962 0.0434282 0.0328969</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>95</id>
+          <transform>19.9412 1.74209 0.029974 0.999676 -0.00686403 0.0102703 0.0222678</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>95</id>
+      <neighbour_list>
+        <neighbour>
+          <id>94</id>
+          <transform>-19.9939 -0.849174 -0.458047 0.999676 0.00686403 -0.0102703 -0.0222678</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>96</id>
+          <transform>20.0335 0.288734 0.430412 0.850584 0.0328431 0.0201132 -0.524427</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>96</id>
+      <neighbour_list>
+        <neighbour>
+          <id>95</id>
+          <transform>-8.71115 -18.0434 -0.402272 0.850584 -0.0328431 -0.0201132 0.524427</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>97</id>
+          <transform>16.1911 3.03762 0.622629 0.904778 -0.025504 -0.0198412 0.424655</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>98</id>
+          <transform>23.3525 16.2389 1.03663 0.840416 -0.0339161 -0.0273948 0.540185</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>97</id>
+      <neighbour_list>
+        <neighbour>
+          <id>96</id>
+          <transform>-12.685 10.5266 0.221707 0.904778 0.025504 0.0198412 -0.424655</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>98</id>
+          <transform>14.8262 3.02708 0.504742 0.990847 -0.00623939 -0.00668324 0.134677</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>98</id>
+      <neighbour_list>
+        <neighbour>
+          <id>96</id>
+          <transform>-24.4732 14.525 0.453163 0.840416 0.0339161 0.0273948 -0.540185</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>97</id>
+          <transform>-15.101 1.04582 -0.315359 0.990847 0.00623939 0.00668324 -0.134677</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>100</id>
+          <transform>11.5753 9.55959 0.454309 0.741175 -0.00797903 -0.00256141 0.671259</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>100</id>
+      <neighbour_list>
+        <neighbour>
+          <id>98</id>
+          <transform>-10.6532 10.5809 -0.366494 0.741175 0.00797903 0.00256141 -0.671259</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>101</id>
+          <transform>20.0272 1.37737 0.934825 0.9983 -0.00507426 -0.0201812 0.0544423</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>101</id>
+      <neighbour_list>
+        <neighbour>
+          <id>100</id>
+          <transform>-20.0793 0.815231 -0.126907 0.9983 0.00507426 0.0201812 -0.0544423</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>102</id>
+          <transform>20.0515 0.54248 0.162244 0.995206 0.000429033 -9.03424e-05 0.0978042</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>102</id>
+      <neighbour_list>
+        <neighbour>
+          <id>101</id>
+          <transform>-19.7735 3.3712 -0.159849 0.995206 -0.000429032 9.03423e-05 -0.0978042</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>103</id>
+          <transform>13.771 2.85311 0.189316 0.988624 -0.0250413 0.00697028 0.148143</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>104</id>
+          <transform>26.0364 6.12276 0.234415 0.998275 -8.49699e-05 0.00835846 -0.0581124</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>103</id>
+      <neighbour_list>
+        <neighbour>
+          <id>102</id>
+          <transform>-13.9959 1.32322 -0.423836 0.988624 0.0250413 -0.00697028 -0.148143</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>104</id>
+          <transform>12.7413 -0.541283 0.471886 0.978855 0.0209371 0.00320657 -0.203457</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>104</id>
+      <neighbour_list>
+        <neighbour>
+          <id>102</id>
+          <transform>-25.1426 -9.10196 -0.664228 0.998275 8.49699e-05 -0.00835846 0.0581124</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>103</id>
+          <transform>-11.8947 -4.59941 -0.465788 0.978855 -0.0209371 -0.00320657 0.203457</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>105</id>
+          <transform>19.9753 1.1244 0.580456 0.99854 0.0136468 -0.0076348 -0.0517086</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>105</id>
+      <neighbour_list>
+        <neighbour>
+          <id>11</id>
+          <transform>15.5744 -6.26695 0.325065 0.76046 -0.00203059 -0.0158661 -0.649188</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>104</id>
+          <transform>-19.7579 -3.19286 -0.217654 0.99854 -0.0136468 0.0076348 0.0517086</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>107</id>
+          <transform>15.1714 8.90568 0.137934 0.761012 -0.0107455 -0.0137943 0.648502</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>107</id>
+      <neighbour_list>
+        <neighbour>
+          <id>11</id>
+          <transform>-14.8852 -2.82346 0.201054 -0.157395 0.0102185 -0.0115395 0.987415</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>105</id>
+          <transform>-11.1986 13.562 0.4058 0.761012 0.0107455 0.0137943 -0.648502</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>108</id>
+          <transform>18.3987 2.98511 0.417414 0.995245 0.00901771 -0.0151716 0.0957929</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>108</id>
+      <neighbour_list>
+        <neighbour>
+          <id>107</id>
+          <transform>-18.6343 0.577085 0.168936 0.995245 -0.00901771 0.0151716 -0.0957928</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>109</id>
+          <transform>20.0375 -0.289982 0.810724 0.999886 -0.0021921 -0.0139254 0.0054826</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>109</id>
+      <neighbour_list>
+        <neighbour>
+          <id>108</id>
+          <transform>-20.0479 0.512102 -0.250695 0.999886 0.0021921 0.0139254 -0.0054826</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>110</id>
+          <transform>19.9554 -0.691168 -0.0359011 0.999052 -0.00428866 0.0170422 -0.0398386</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>110</id>
+      <neighbour_list>
+        <neighbour>
+          <id>109</id>
+          <transform>-19.9368 -0.896978 -0.645482 0.999052 0.00428866 -0.0170422 0.0398386</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>111</id>
+          <transform>20.0239 0.716261 0.299284 0.999822 0.00668212 -0.0103992 0.0142779</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>111</id>
+      <neighbour_list>
+        <neighbour>
+          <id>110</id>
+          <transform>-20.038 -0.145332 0.123162 0.999822 -0.00668212 0.0103992 -0.0142779</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>112</id>
+          <transform>20.0295 -0.44825 0.432544 0.998554 -0.0138911 0.0435785 -0.0282295</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>112</id>
+      <neighbour_list>
+        <neighbour>
+          <id>3</id>
+          <transform>12.1172 1.77177 1.39628 -0.0415021 -0.0339719 -0.00942957 0.998516</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>111</id>
+          <transform>-19.91 -0.644535 -2.1783 0.998554 0.0138911 -0.0435785 0.0282295</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>114</id>
+          <transform>26.4683 4.24546 2.39057 0.885403 -0.0195274 -0.0175835 0.464081</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>114</id>
+      <neighbour_list>
+        <neighbour>
+          <id>0</id>
+          <transform>-20.0192 -17.1472 -0.564542 0.940448 0.00194712 -0.0308191 0.338532</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>47</id>
+          <transform>19.0153 8.96496 0.921181 -0.437629 0.0301036 -0.00207802 0.898649</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>84</id>
+          <transform>-18.4374 -15.4205 -0.542555 0.923008 -0.00654822 -0.00400179 0.384705</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>112</id>
+          <transform>-18.5738 19.4415 -1.16092 0.885403 0.0195274 0.0175835 -0.464081</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>115</id>
+          <transform>10.4525 2.98634 0.396349 0.991645 0.010739 -0.00571481 0.128419</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>115</id>
+      <neighbour_list>
+        <neighbour>
+          <id>47</id>
+          <transform>10.0551 3.52647 0.254351 -0.316729 0.0394983 0.00535431 0.947678</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>114</id>
+          <transform>-10.8728 -0.231565 -0.238604 0.991645 -0.010739 0.00571481 -0.128419</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>117</id>
+          <transform>9.94794 -9.65173 0.530579 0.825231 -0.0212698 -0.0242737 -0.563873</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>117</id>
+      <neighbour_list>
+        <neighbour>
+          <id>115</id>
+          <transform>-12.6167 -5.7588 0.233484 0.825231 0.0212698 0.0242737 0.563873</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>118</id>
+          <transform>20.025 -0.832092 -0.0445461 0.958416 -0.0047319 0.0159954 -0.284888</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>118</id>
+      <neighbour_list>
+        <neighbour>
+          <id>117</id>
+          <transform>-17.22 -10.2361 -0.623481 0.958416 0.00473189 -0.0159954 0.284888</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>119</id>
+          <transform>10.7834 -2.97821 0.234348 0.916889 -0.00745462 -0.00377065 -0.399054</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>119</id>
+      <neighbour_list>
+        <neighbour>
+          <id>118</id>
+          <transform>-9.53091 -5.85978 -0.174234 0.916889 0.00745462 0.00377064 0.399054</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>120</id>
+          <transform>19.9403 -1.93651 -0.645717 0.993429 0.0157357 0.0353522 -0.10771</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>120</id>
+      <neighbour_list>
+        <neighbour>
+          <id>119</id>
+          <transform>-19.8876 -2.3836 -0.764516 0.993429 -0.0157357 -0.0353522 0.10771</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>121</id>
+          <transform>20.0463 0.640537 0.213929 0.99681 0.000352041 0.0151302 0.078369</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>121</id>
+      <neighbour_list>
+        <neighbour>
+          <id>57</id>
+          <transform>11.5402 3.5239 0.17434 0.996219 -0.00351482 -0.0224311 0.0838625</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>120</id>
+          <transform>-19.8846 2.49846 -0.82068 0.99681 -0.00035204 -0.0151302 -0.078369</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>123</id>
+          <transform>19.0167 -12.5154 0.208521 0.680337 0.00839925 -0.00130011 -0.73285</transform>
+          <reachable>false</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>123</id>
+      <neighbour_list>
+        <neighbour>
+          <id>121</id>
+          <transform>-11.0682 -19.8949 -0.0599254 0.680337 -0.00839925 0.00130011 0.73285</transform>
+          <reachable>true</reachable>
+        </neighbour>
+        <neighbour>
+          <id>124</id>
+          <transform>20.0311 0.0804996 0.431623 0.999716 0.00345448 -0.00647768 -0.0226919</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+    <node>
+      <id>124</id>
+      <neighbour_list>
+        <neighbour>
+          <id>81</id>
+          <transform>13.7855 25.215 0.0691475 0.74504 -0.0169761 -0.0394162 -0.665637</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>82</id>
+          <transform>10.8419 -0.147944 0.462662 0.696822 0.0209544 0.000708389 -0.716938</transform>
+          <reachable>false</reachable>
+        </neighbour>
+        <neighbour>
+          <id>123</id>
+          <transform>-20.0107 -0.991455 -0.168467 0.999716 -0.00345448 0.00647768 0.0226919</transform>
+          <reachable>true</reachable>
+        </neighbour>
+      </neighbour_list>
+    </node>
+  </node_list>
+  <property>
+    <node_count>83</node_count>
+  </property>
+</map>
