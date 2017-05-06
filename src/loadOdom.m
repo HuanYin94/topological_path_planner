@@ -1,4 +1,4 @@
-function [ pose ] = loadOdom( odom, blank)
+function [ pose , pp] = loadOdom( odom, blank)
 %LOADODOM Summary of this function goes here
 %   Detailed explanation goes here
     
@@ -12,7 +12,7 @@ function [ pose ] = loadOdom( odom, blank)
     
     for i = 1:1:length(pose)
         p = pose{i};
-        plot3(p(1,4),p(2,4),p(3,4),'k.')
+        pp = plot3(p(1,4),p(2,4),p(3,4),'k.', 'markersize', 8);
     end
 
 end
