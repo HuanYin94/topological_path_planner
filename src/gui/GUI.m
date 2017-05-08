@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 08-May-2017 15:18:33
+% Last Modified by GUIDE v2.5 08-May-2017 20:43:03
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -100,28 +100,45 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     cla reset;
     
     set(handles.text2, 'String', 'DRAWING POINTS');
+    axis equal;
 
-    global point poseRt pose7;
+    global point poseRt pose7  edges;
+    
+    % show map points
 %     for i = 1 : 1 : length(point)
 %         plot3(handles.axes1, point{i}(1, 1), point{i}(1, 2), point{i}(1, 3), 'r.', 'markersize', 3);
 %         hold on;
 %     end
-    
+
+    % show path-points and descriptors
     for i = 1 : 1 : length(pose7)
         p = poseRt{i};
         plot3(handles.axes1, p(1,4),p(2,4),p(3,4),'k.', 'markersize', 8);
         
         % show turn points
         if pose7{i}(1, 8) == 1
-            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4),'r*', 'markersize', 8);
+            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4), 'r*', 'markersize', 8);
         end
         
         % show fork points
         if pose7{i}(1, 9) == 1
-            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4),'mo', 'markersize', 8);
+            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4), 'mo', 'markersize', 8);
         end
         
         hold on;
+        axis equal;
+    end
+    
+    % show edges
+    for i = 1 : 1 : length(edges)
+        X1 = poseRt{edges(i, 1)}(1,4); 
+        X2 = poseRt{edges(i, 2)}(1,4);
+        Y1 = poseRt{edges(i, 1)}(2,4); Y2 = poseRt{edges(i, 2)}(2,4);
+        Z1 = poseRt{edges(i, 1)}(3,4); Z2 = poseRt{edges(i, 2)}(3,4);
+        X = [X1, X2];
+        Y = [Y1, Y2];
+        Z = [Z1, Z2];
+        plot3(handles.axes1, X, Y, Z, 'g-');
     end
     
     set(handles.text2, 'String', 'DRAWING POINTS FINISHED');
@@ -138,7 +155,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
     
     for i = 1 : 1 : length(pose7)
         for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 3 && abs(Y(j) - pose7{i}(1,2)) < 3            
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
                 pose7{i}(1,8) = 1;           
             end
         end    
@@ -147,20 +164,179 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+    
+    set(handles.text2, 'String', 'SELECT FORK-POINTS, PRESS ENTER TO FINISH'); 
+    
+    global pose7;
+    
+    [X, Y] = ginput();
+    
+    set(handles.text2, 'String', 'SELECT FORK-POINTS FINISHED'); 
+    
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+                pose7{i}(1,9) = 1;           
+            end
+        end    
+    end
 
 
 % --- Executes on button press in pushbutton5.
+% Auto Create edges based on index of poses
 function pushbutton5_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+    global edges pose7;
+    
+    edges = zeros(length(pose7) - 1, 2);
+    for i = 1 : 1 : length(pose7) - 1
+        edges(i, 1) = i;
+        edges(i, 2) = i + 1;
+    end
+    
+    set(handles.text2, 'String', 'AUTO EDGES CREATING FINISHED'); 
 
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton6 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+    clc
+    whos global
+    
+
+
+% --- Executes on button press in pushbutton7.
+function pushbutton7_Callback(hObject, eventdata, handles)
+    set(handles.text2, 'String', 'REMOVE PATH-POINTS, PRESS ENTER TO FINISH'); 
+    
+    global poseRt pose7;
+    
+    [X, Y] = ginput();
+    
+    set(handles.text2, 'String', 'REMOVE PATH-POINTS FINISHED'); 
+       
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5 
+                poseRt(i) = [];
+                pose7(i) = [];
+            end
+        end    
+    end
+
+
+% --- Executes on button press in pushbutton8.
+function pushbutton8_Callback(hObject, eventdata, handles)
+    set(handles.text2, 'String', 'REMOVE FORK-POINTS, PRESS ENTER TO FINISH'); 
+    
+    global pose7;
+    
+    [X, Y] = ginput();
+    
+    set(handles.text2, 'String', 'REMOVE FORK-POINTS FINISHED'); 
+    
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+                pose7{i}(1,9) = 0;           
+            end
+        end    
+    end
+
+
+% --- Executes on button press in pushbutton9.
+function pushbutton9_Callback(hObject, eventdata, handles)
+    set(handles.text2, 'String', 'REMOVE TURN-POINTS, PRESS ENTER TO FINISH'); 
+    
+    global pose7;
+    
+    [X, Y] = ginput();
+    
+    set(handles.text2, 'String', 'REMOVE TURN-POINTS FINISHED'); 
+    
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+                pose7{i}(1,8) = 0;           
+            end
+        end    
+    end
+
+
+
+% --- Executes on button press in pushbutton10.
+function pushbutton10_Callback(hObject, eventdata, handles)
+    
+    global edges pose7;
+
+    [X, Y] = ginput(2);
+    
+    count = 0;
+    removeEdge1 = zeros(1, 2);
+    removeEdge2 = zeros(1, 2);
+    
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+                
+                count = count + 1;
+                
+                if count == 1
+                  removeEdge1(1, 1) = i; 
+                  removeEdge2(1, 2) = i;
+                end
+                
+                if count == 2
+                  removeEdge1(1, 2) = i; 
+                  removeEdge2(1, 1) = i;
+                end
+                
+            end
+        end    
+    end
+    
+    if count == 2 
+        for i = 1 : 1 : length(edges)
+           
+            if isequal(edges(i, :), removeEdge1)
+               edges(i, :) =[];
+            end
+            
+            if isequal(edges(i, :), removeEdge2)
+                edges(i, :) =[]; 
+            end            
+           
+        end
+    end
+
+
+% --- Executes on button press in pushbutton11.
+function pushbutton11_Callback(hObject, eventdata, handles)
+global edges pose7;
+
+    [X, Y] = ginput(2);
+    
+    count = 0;
+    addEdge = zeros(1, 2);
+    
+    for i = 1 : 1 : length(pose7)
+        for j = 1 : 1 : length(X)
+            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+                
+                count = count + 1;
+                
+                if count == 1
+                  addEdge(1, 1) = i; 
+                end
+                
+                if count == 2
+                  addEdge(1, 2) = i; 
+                end
+                
+            end
+        end    
+    end
+    
+    if count == 2 
+        j = length(edges);         
+        edges(j+1, :) = addEdge;    
+    end
+
