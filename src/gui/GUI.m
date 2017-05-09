@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 08-May-2017 20:43:03
+% Last Modified by GUIDE v2.5 09-May-2017 13:20:34
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -76,6 +76,7 @@ varargout{1} = handles.output;
 % --- Executes on button press in pushbutton1.
 
 % --- Executes on button press in pushbutton2.
+%  Load Raw Data
 function pushbutton2_Callback(hObject, eventdata, handles)
 
     set(handles.text2, 'String', 'START LOADING');
@@ -95,6 +96,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton3.
+% Refresh
 function pushbutton3_Callback(hObject, eventdata, handles)
     
     cla reset;
@@ -142,7 +144,8 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     end
     
     set(handles.text2, 'String', 'DRAWING POINTS FINISHED');
-    
+
+% Add turn-points    
 function pushbutton1_Callback(hObject, eventdata, handles)
 
     set(handles.text2, 'String', 'SELECT TURN-POINTS, PRESS ENTER TO FINISH'); 
@@ -163,6 +166,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton4.
+% Add fork-points
 function pushbutton4_Callback(hObject, eventdata, handles)
     
     set(handles.text2, 'String', 'SELECT FORK-POINTS, PRESS ENTER TO FINISH'); 
@@ -184,6 +188,7 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton5.
 % Auto Create edges based on index of poses
+% Ato edges
 function pushbutton5_Callback(hObject, eventdata, handles)
     global edges pose7;
     
@@ -197,6 +202,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton6.
+% Export
 function pushbutton6_Callback(hObject, eventdata, handles)
     clc
     whos global
@@ -204,6 +210,7 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton7.
+% remove path-points
 function pushbutton7_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'REMOVE PATH-POINTS, PRESS ENTER TO FINISH'); 
     
@@ -224,6 +231,7 @@ function pushbutton7_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton8.
+% remove fork-points
 function pushbutton8_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'REMOVE FORK-POINTS, PRESS ENTER TO FINISH'); 
     
@@ -243,6 +251,7 @@ function pushbutton8_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton9.
+% remove turn-points
 function pushbutton9_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'REMOVE TURN-POINTS, PRESS ENTER TO FINISH'); 
     
@@ -263,6 +272,7 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton10.
+% remove edges
 function pushbutton10_Callback(hObject, eventdata, handles)
     
     global edges pose7;
@@ -309,6 +319,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton11.
+% add edges
 function pushbutton11_Callback(hObject, eventdata, handles)
 global edges pose7;
 
@@ -340,3 +351,20 @@ global edges pose7;
         edges(j+1, :) = addEdge;    
     end
 
+
+% --- Executes on button press in pushbutton13.
+% clear edges
+function pushbutton13_Callback(hObject, eventdata, handles)
+    global edges
+    
+    set(handles.text2, 'String', 'ALL EDGES CLEARED');
+    
+    for i = 1 : 1 : length(edges)
+        edges(1, :) = [];                % clear 1 always
+    end
+    
+% --- Executes on button press in pushbutton14.
+function pushbutton14_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton14 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
