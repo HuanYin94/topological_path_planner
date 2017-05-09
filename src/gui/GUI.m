@@ -203,7 +203,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
         edges(i, 2) = pose7{i+1}(1, 10);
     end
     
-    set(handles.text2, 'String', 'AUTO EDGES CREATING FINISHED'); 
+    set(handles.text2, 'String', 'AUTO EDGES CREATED'); 
 
 
 % --- Executes on button press in pushbutton6.
@@ -211,11 +211,13 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 function pushbutton6_Callback(hObject, eventdata, handles)
     clc
     whos global
+    clear global
     
 
 
 % --- Executes on button press in pushbutton7.
 % remove path-points
+% problem exists %
 function pushbutton7_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'REMOVE PATH-POINTS, PRESS ENTER TO FINISH'); 
     
@@ -232,6 +234,8 @@ function pushbutton7_Callback(hObject, eventdata, handles)
                 
                 poseRt(i) = [];
                 pose7(i) = [];
+                
+                fprintf('end');
                 
                 % remove edges
                 for k = 1 : 1 : length(edges)
@@ -301,7 +305,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
     
     for i = 1 : 1 : length(pose7)
         for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+            if (abs(X(j) - pose7{i}(1,1))) < 2 && abs(Y(j) - pose7{i}(1,2)) < 2            
                 
                 count = count + 1;
                 
@@ -319,7 +323,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
         end    
     end
     
-    if count == 2 
+    if count >= 2 
         for i = 1 : 1 : length(edges)
            
             if isequal(edges(i, :), removeEdge1)
@@ -346,7 +350,7 @@ global edges pose7;
     
     for i = 1 : 1 : length(pose7)
         for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+            if (abs(X(j) - pose7{i}(1,1))) < 2 && abs(Y(j) - pose7{i}(1,2)) < 2            
                 
                 count = count + 1;
                 
@@ -361,8 +365,8 @@ global edges pose7;
             end
         end    
     end
-    
-    if count == 2 
+        
+    if count >= 2 
         j = length(edges);         
         edges(j+1, :) = addEdge;    
     end
@@ -378,6 +382,7 @@ function pushbutton13_Callback(hObject, eventdata, handles)
     for i = 1 : 1 : length(edges)
         edges(1, :) = [];                % clear 1 always
     end
+    
     
 % --- Executes on button press in pushbutton14.
 % Add path-points
