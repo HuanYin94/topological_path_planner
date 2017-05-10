@@ -84,7 +84,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
     point = loadData('/home/yh/wholeMap.txt', 300);
     
-    in = evalin('base', 'icpodom1');
+    in = evalin('base', 'trajectory');
     poseRt = loadOdom(in, 60);
     
     
@@ -109,7 +109,13 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'DRAWING POINTS');
     axis equal;
 
-    global point poseRt pose7  edges;
+    global poseRt pose7  edgeLists;
+    
+    % Change poseRt
+    poseRt(:) = [];
+    for i = 1 : 1 : length(pose7)
+        poseRt{i} = p7ToRt(pose7{i});
+    end
     
     % show map points
 %     for i = 1 : 1 : length(point)
@@ -124,29 +130,50 @@ function pushbutton3_Callback(hObject, eventdata, handles)
         
         % show turn points
         if pose7{i}(1, 8) == 1
-            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4), 'r*', 'markersize', 8);
+            plot3(handles.axes1, p{i}(1,4), p{i}(2,4), p{i}(3,4), 'r*', 'markersize', 8);
         end
         
         % show fork points
         if pose7{i}(1, 9) == 1
-            plot3(handles.axes1, poseRt{i}(1,4), poseRt{i}(2,4), poseRt{i}(3,4), 'mo', 'markersize', 8);
+            plot3(handles.axes1, p{i}(1,4), p{i}(2,4), p{i}(3,4), 'mo', 'markersize', 8);
         end
         
         hold on;
         axis equal;
     end
     
-    % show edges
-    for i = 1 : 1 : length(edges)
-        X1 = poseRt{edges(i, 1)}(1,4); 
-        X2 = poseRt{edges(i, 2)}(1,4);
-        Y1 = poseRt{edges(i, 1)}(2,4); Y2 = poseRt{edges(i, 2)}(2,4);
-        Z1 = poseRt{edges(i, 1)}(3,4); Z2 = poseRt{edges(i, 2)}(3,4);
+    % show ID
+    for i = 1 : 1 : length(pose7)
+        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
+    end
+    
+    % show edgeLists
+    for i = 1 : 1 : length(edgeLists)
+        ID1 = edgeLists(i, 1);
+        ID2 = edgeLists(i, 2);
+        
+        % ID ---> Line
+        for j = 1 : 1 : length(pose7)
+           if pose7{j}(1, 10) == ID1
+               Line1 = j;
+           end
+           
+           if pose7{j}(1, 10) == ID2
+               Line2 = j;
+           end
+        end
+        
+        X1 = poseRt{Line1}(1,4); 
+        X2 = poseRt{Line2}(1,4);
+        Y1 = poseRt{Line1}(2,4); Y2 = poseRt{Line2}(2,4);
+        Z1 = poseRt{Line1}(3,4); Z2 = poseRt{Line2}(3,4);
+        
         X = [X1, X2];
         Y = [Y1, Y2];
         Z = [Z1, Z2];
         plot3(handles.axes1, X, Y, Z, 'g-');
     end
+    
     
     set(handles.text2, 'String', 'DRAWING POINTS FINISHED');
 
@@ -192,60 +219,75 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton5.
-% Auto Create edges based on index of poses
-% Auto edges
+% Auto Create edgeLists based on index of poses
+% Auto edgeLists
 function pushbutton5_Callback(hObject, eventdata, handles)
-    global edges pose7;
+    global edgeLists pose7;
     
-    edges = zeros(length(pose7) - 1, 2);
+    edgeLists = zeros(length(pose7) - 1, 2);
     for i = 1 : 1 : length(pose7) - 1
-        edges(i, 1) = pose7{i}(1, 10);
-        edges(i, 2) = pose7{i+1}(1, 10);
+        edgeLists(i, 1) = pose7{i}(1, 10);
+        edgeLists(i, 2) = pose7{i+1}(1, 10);
     end
+
+    % Minst Tree?
     
-    set(handles.text2, 'String', 'AUTO EDGES CREATED'); 
+    
+    set(handles.text2, 'String', 'AUTO edgeLists CREATED'); 
 
 
 % --- Executes on button press in pushbutton6.
 % Export
 function pushbutton6_Callback(hObject, eventdata, handles)
-    clc
     whos global
-    clear global
+    global edgeLists;
+    clc
+%     clear global
     
 
 
 % --- Executes on button press in pushbutton7.
 % remove path-points
-% problem exists %
 function pushbutton7_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'REMOVE PATH-POINTS, PRESS ENTER TO FINISH'); 
     
-    global poseRt pose7 edges;
+    global pose7 edgeLists;
     
     [X, Y] = ginput();
     
     set(handles.text2, 'String', 'REMOVE PATH-POINTS FINISHED'); 
-       
-    for i = 1 : 1 : length(pose7)
-        for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5 
+    for j = 1 : 1 : length(X)
+        
+        % remove path-point
+        lenP = length(pose7);
+        i=1;
+        
+        while i <= lenP
+            if (abs(X(j) - pose7{i}(1,1))) < 3 && abs(Y(j) - pose7{i}(1,2)) < 3 
                 ID = pose7{i}(1, 10);             
-                
-                poseRt(i) = [];
+            
                 pose7(i) = [];
+                lenP = length(pose7);
+                i = i -1;
+                                
+                % remove edgeLists
+                lenE = length(edgeLists);
+                k = 1;
                 
-                fprintf('end');
-                
-                % remove edges
-                for k = 1 : 1 : length(edges)
-                    if (edges(k, 1) == ID) || (edges(k, 2) == ID)
-                       edges(k, :) = []; 
+                while k <= lenE
+                    
+                    if (edgeLists(k, 1) == ID) || (edgeLists(k, 2) == ID)
+                       edgeLists(k, :) = []; 
+                       lenE = length(edgeLists);
                        k = k -1;
                     end
+                    
+                    k = k + 1;
                 end 
             
             end
+            
+            i = i + 1;
         end    
     end
 
@@ -292,10 +334,10 @@ function pushbutton9_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton10.
-% remove edges
+% remove edgeLists
 function pushbutton10_Callback(hObject, eventdata, handles)
     
-    global edges pose7;
+    global edgeLists pose7;
 
     [X, Y] = ginput(2);
     
@@ -324,14 +366,14 @@ function pushbutton10_Callback(hObject, eventdata, handles)
     end
     
     if count >= 2 
-        for i = 1 : 1 : length(edges)
+        for i = 1 : 1 : length(edgeLists)
            
-            if isequal(edges(i, :), removeEdge1)
-               edges(i, :) =[];
+            if isequal(edgeLists(i, :), removeEdge1)
+               edgeLists(i, :) =[];
             end
             
-            if isequal(edges(i, :), removeEdge2)
-                edges(i, :) =[]; 
+            if isequal(edgeLists(i, :), removeEdge2)
+                edgeLists(i, :) =[]; 
             end            
            
         end
@@ -339,9 +381,9 @@ function pushbutton10_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on button press in pushbutton11.
-% add edges
+% add edgeLists
 function pushbutton11_Callback(hObject, eventdata, handles)
-global edges pose7;
+global edgeLists pose7;
 
     [X, Y] = ginput(2);
     
@@ -367,24 +409,65 @@ global edges pose7;
     end
         
     if count >= 2 
-        j = length(edges);         
-        edges(j+1, :) = addEdge;    
+        j = length(edgeLists);         
+        edgeLists(j+1, :) = addEdge;    
     end
 
 
 % --- Executes on button press in pushbutton13.
-% clear edges
+% clear edgeLists
 function pushbutton13_Callback(hObject, eventdata, handles)
-    global edges
+    global edgeLists
     
-    set(handles.text2, 'String', 'ALL EDGES CLEARED');
+    set(handles.text2, 'String', 'ALL edgeLists CLEARED');
     
-    for i = 1 : 1 : length(edges)
-        edges(1, :) = [];                % clear 1 always
+    for i = 1 : 1 : length(edgeLists)
+        edgeLists(1, :) = [];                % clear 1 always
     end
     
     
 % --- Executes on button press in pushbutton14.
 % Add path-points
 function pushbutton14_Callback(hObject, eventdata, handles)
+
+    global pose7;
+    
+    set(handles.text2, 'String', 'ADDING NEW PATH-POINTS, PRESS ENTER TO END'); 
+    
+    [X, Y] = ginput();
+    
+    for i = 1 : 1 : length(X)
+        nearestLine = 1;
+        nearestDis = 9999999;
+        inputXY = [X(i), Y(i)];
+        maxIndex = 0;
+        
+       for j = 1 : 1 : length(pose7)
+            pointXY = pose7{j}(1,1:2);
+            dist = pdist2(inputXY, pointXY);
+            
+            if dist < nearestDis
+               nearestDis = dist;
+               nearestLine = j;
+            end
+            
+            % get Max Index(ID)
+            if pose7{j}(1, 10) > maxIndex
+                maxIndex = pose7{j}(1, 10);
+            end
+            
+       end
+        maxIndex
+        len = length(pose7);
+        newPose = pose7{nearestLine};
+        newPose(1, 1:2) = inputXY;
+        newPose(1, 10) = maxIndex + 1;
+        pose7{len + 1} = newPose;      
+       
+    end
+    
+    
+    
+    
+    
 
