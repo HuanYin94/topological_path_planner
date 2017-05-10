@@ -82,7 +82,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'START LOADING');
 
     global point poseRt pose7;
-    point = loadData('/home/yh/wholeMap.txt', 300);
+    point = loadData('/home/yh/wholeMap.txt', 100);
     
     in = evalin('base', 'icpodom1');
     poseRt = loadOdom(in, 60);
@@ -109,14 +109,14 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'DRAWING POINTS');
 %     axis equal;
 
-    global pose7  edgeLists;
+    global point pose7  edgeLists;
     
         % show map points
 %     for i = 1 : 1 : length(point)
 %         plot3(handles.axes1, point{i}(1, 1), point{i}(1, 2), point{i}(1, 3), 'r.', 'markersize', 3);
 %         hold on;
 %     end
-    
+     
     % Change poseRt
 %     poseRt(:) = [];
 %     for i = 1 : 1 : length(pose7)
