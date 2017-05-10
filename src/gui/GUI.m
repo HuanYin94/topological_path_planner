@@ -84,7 +84,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
     point = loadData('/home/yh/wholeMap.txt', 300);
     
-    in = evalin('base', 'trajectory');
+    in = evalin('base', 'icpodom1');
     poseRt = loadOdom(in, 60);
     
     
@@ -107,44 +107,42 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     cla reset;
     
     set(handles.text2, 'String', 'DRAWING POINTS');
-    axis equal;
+%     axis equal;
 
-    global poseRt pose7  edgeLists;
+    global pose7  edgeLists;
     
-    % Change poseRt
-    poseRt(:) = [];
-    for i = 1 : 1 : length(pose7)
-        poseRt{i} = p7ToRt(pose7{i});
-    end
-    
-    % show map points
+        % show map points
 %     for i = 1 : 1 : length(point)
 %         plot3(handles.axes1, point{i}(1, 1), point{i}(1, 2), point{i}(1, 3), 'r.', 'markersize', 3);
 %         hold on;
 %     end
+    
+    % Change poseRt
+%     poseRt(:) = [];
+%     for i = 1 : 1 : length(pose7)
+%         poseRt{i} = p7ToRt(pose7{i});
+%     end
 
     % show path-points and descriptors
     for i = 1 : 1 : length(pose7)
-        p = poseRt{i};
-        plot3(handles.axes1, p(1,4),p(2,4),p(3,4),'k.', 'markersize', 8);
+        
+        plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'k.', 'markersize', 8);
         
         % show turn points
         if pose7{i}(1, 8) == 1
-            plot3(handles.axes1, p{i}(1,4), p{i}(2,4), p{i}(3,4), 'r*', 'markersize', 8);
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'r*', 'markersize', 8);
         end
         
         % show fork points
         if pose7{i}(1, 9) == 1
-            plot3(handles.axes1, p{i}(1,4), p{i}(2,4), p{i}(3,4), 'mo', 'markersize', 8);
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'mo', 'markersize', 8);
         end
+        
+        % show ID
+        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
         
         hold on;
         axis equal;
-    end
-    
-    % show ID
-    for i = 1 : 1 : length(pose7)
-        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
     end
     
     % show edgeLists
@@ -163,10 +161,10 @@ function pushbutton3_Callback(hObject, eventdata, handles)
            end
         end
         
-        X1 = poseRt{Line1}(1,4); 
-        X2 = poseRt{Line2}(1,4);
-        Y1 = poseRt{Line1}(2,4); Y2 = poseRt{Line2}(2,4);
-        Z1 = poseRt{Line1}(3,4); Z2 = poseRt{Line2}(3,4);
+        X1 = pose7{Line1}(1,1); 
+        X2 = pose7{Line2}(1,1);
+        Y1 = pose7{Line1}(1,2); Y2 = pose7{Line2}(1,2);
+        Z1 = pose7{Line1}(1,3); Z2 = pose7{Line2}(1,3);
         
         X = [X1, X2];
         Y = [Y1, Y2];
@@ -182,7 +180,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
     set(handles.text2, 'String', 'SELECT TURN-POINTS, PRESS ENTER TO FINISH'); 
     
-    global pose7;
+    global pose7 ;
     
     [X, Y] = ginput();
     
@@ -195,6 +193,17 @@ function pushbutton1_Callback(hObject, eventdata, handles)
             end
         end    
     end
+    
+    % SHOW
+    
+    % show path-points and descriptors
+    for i = 1 : 1 : length(pose7)
+        % show turn points
+        if pose7{i}(1, 8) == 1
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'r*', 'markersize', 8);
+        end
+    end
+    
 
 
 % --- Executes on button press in pushbutton4.
@@ -215,6 +224,14 @@ function pushbutton4_Callback(hObject, eventdata, handles)
                 pose7{i}(1,9) = 1;           
             end
         end    
+    end
+    
+    % show path-points and descriptors
+    for i = 1 : 1 : length(pose7)
+        % show fork points
+        if pose7{i}(1, 9) == 1
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'mo', 'markersize', 8);
+        end
     end
 
 
@@ -412,6 +429,33 @@ global edgeLists pose7;
         j = length(edgeLists);         
         edgeLists(j+1, :) = addEdge;    
     end
+    
+    % show edgeLists
+    for i = 1 : 1 : length(edgeLists)
+        ID1 = edgeLists(i, 1);
+        ID2 = edgeLists(i, 2);
+        
+        % ID ---> Line
+        for j = 1 : 1 : length(pose7)
+           if pose7{j}(1, 10) == ID1
+               Line1 = j;
+           end
+           
+           if pose7{j}(1, 10) == ID2
+               Line2 = j;
+           end
+        end
+        
+        X1 = pose7{Line1}(1,1); 
+        X2 = pose7{Line2}(1,1);
+        Y1 = pose7{Line1}(1,2); Y2 = pose7{Line2}(1,2);
+        Z1 = pose7{Line1}(1,3); Z2 = pose7{Line2}(1,3);
+        
+        X = [X1, X2];
+        Y = [Y1, Y2];
+        Z = [Z1, Z2];
+        plot3(handles.axes1, X, Y, Z, 'g-');
+    end
 
 
 % --- Executes on button press in pushbutton13.
@@ -464,6 +508,27 @@ function pushbutton14_Callback(hObject, eventdata, handles)
         newPose(1, 10) = maxIndex + 1;
         pose7{len + 1} = newPose;      
        
+    end
+    
+    for i = 1 : 1 : length(pose7)
+        
+        plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'k.', 'markersize', 8);
+        
+        % show turn points
+        if pose7{i}(1, 8) == 1
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'r*', 'markersize', 8);
+        end
+        
+        % show fork points
+        if pose7{i}(1, 9) == 1
+            plot3(handles.axes1, pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), 'mo', 'markersize', 8);
+        end
+        
+        % show ID
+        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
+        
+        hold on;
+        axis equal;
     end
     
     
