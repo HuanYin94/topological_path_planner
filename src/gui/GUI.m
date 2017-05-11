@@ -84,7 +84,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
     point = loadData('/home/yh/wholeMap.txt', 100);
     
-    in = evalin('base', 'icpodom1');
+    in = evalin('base', 'trajectory');
     poseRt = loadOdom(in, 60);
     
     
@@ -98,6 +98,31 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     end
         
     set(handles.text2, 'String', 'LOAD FINISHED');
+    
+    % filter
+    k = 1;
+    lenP = length(pose7);
+    while k < lenP
+        k
+        inputXY = pose7{k}(1, 1:2);
+        
+         i = k + 1;
+         while i <= lenP
+            pointXY = pose7{i}(1, 1:2);
+            
+            dist = pdist2(inputXY, pointXY);
+            [i dist]
+            if dist <= 4
+                pose7(i) = [];
+                i = i - 1;
+                lenP = length(pose7);
+            end
+            
+            i = i + 1;
+         end
+        
+         k = k + 1;
+    end
 
 
 % --- Executes on button press in pushbutton3.
@@ -465,13 +490,7 @@ global edgeLists pose7;
 % --- Executes on button press in pushbutton13.
 % clear edgeLists
 function pushbutton13_Callback(hObject, eventdata, handles)
-    global edgeLists
-    
-    set(handles.text2, 'String', 'ALL edgeLists CLEARED');
-    
-    for i = 1 : 1 : length(edgeLists)
-        edgeLists(1, :) = [];                % clear 1 always
-    end
+
     
     
 % --- Executes on button press in pushbutton14.
