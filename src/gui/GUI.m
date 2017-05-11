@@ -245,7 +245,7 @@ function pushbutton4_Callback(hObject, eventdata, handles)
     
     for i = 1 : 1 : length(pose7)
         for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+            if (abs(X(j) - pose7{i}(1,1))) < 3 && abs(Y(j) - pose7{i}(1,2)) < 3            
                 pose7{i}(1,9) = 1;           
             end
         end    
@@ -351,7 +351,7 @@ function pushbutton8_Callback(hObject, eventdata, handles)
     
     for i = 1 : 1 : length(pose7)
         for j = 1 : 1 : length(X)
-            if (abs(X(j) - pose7{i}(1,1))) < 5 && abs(Y(j) - pose7{i}(1,2)) < 5            
+            if (abs(X(j) - pose7{i}(1,1))) < 3 && abs(Y(j) - pose7{i}(1,2)) < 3            
                 pose7{i}(1,9) = 0;           
             end
         end    
@@ -548,7 +548,7 @@ function pushbutton14_Callback(hObject, eventdata, handles)
         end
         
         % show ID
-        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
+%         text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
         
         hold on;
         axis equal;
