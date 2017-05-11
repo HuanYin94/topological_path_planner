@@ -256,11 +256,15 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % --- Executes on button press in pushbutton6.
 % Export
 function pushbutton6_Callback(hObject, eventdata, handles)
-    whos global
-    global edgeLists;
     clc
-%     clear global
+    whos global
+    global edgeLists pose7;
     
+    edgeLists
+    
+    for i = 1 : 1 : length(pose7)
+        fprintf([num2str(pose7{i}), '\n']);
+    end    
 
 
 % --- Executes on button press in pushbutton7.
