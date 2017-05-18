@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 09-May-2017 13:20:34
+% Last Modified by GUIDE v2.5 11-May-2017 19:16:16
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -164,7 +164,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
         end
         
         % show ID
-        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
+%         text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
         
         hold on;
         axis equal;
@@ -488,8 +488,12 @@ global edgeLists pose7;
 
 
 % --- Executes on button press in pushbutton13.
-% clear edgeLists
+% Load Lists
 function pushbutton13_Callback(hObject, eventdata, handles)
+
+    global pose7 edgeLists;
+    
+
 
     
     
@@ -558,4 +562,3 @@ function pushbutton14_Callback(hObject, eventdata, handles)
     
     
     
-
