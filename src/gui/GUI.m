@@ -164,7 +164,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
         end
         
         % show ID
-        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
+        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 5);
         
         hold on;
         axis equal;
