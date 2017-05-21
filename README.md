@@ -8,7 +8,7 @@ v1.0
 
 v2.0 with GUI
 
-![](https://github.com/ZJUYH/topological_path_planner/raw/master/img/vvv.jpg)
+![](https://github.com/ZJUYH/topological_path_planner/raw/master/img/vvv.png)
 
 ## HOW TO USE IT
 
