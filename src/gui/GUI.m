@@ -164,7 +164,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
         end
         
         % show ID
-        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 5);
+%         text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 5);
         
         hold on;
         axis equal;
@@ -493,14 +493,14 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 
     global pose7 edgeLists;
 
-    pose7Mat = load('result/export_2.0_pose7');
+    pose7Mat = load('result/export_jd_pose7');
     
     [a, b] = size(pose7Mat);
     for i = 1 : 1 : a
        pose7{i} = pose7Mat(i, :);
     end
     
-    edgeLists = load('result/export_2.0_edgeLists');
+    edgeLists = load('result/export_jd_edgeLists');
     
     
 % --- Executes on button press in pushbutton14.
