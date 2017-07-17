@@ -82,7 +82,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     set(handles.text2, 'String', 'START LOADING');
 
     global point poseRt pose7;
-    point = loadData('/home/yh/wholeMap.txt', 100);
+%     point = loadData('/home/yh/wholeMap.txt', 100);
     
     in = evalin('base', 'trajectory');
     poseRt = loadOdom(in, 60);
@@ -96,9 +96,9 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     for i = 1 : 1 : length(poseRt)
         pose7{i}(1, 10) = i;
     end
-        
+%         
     set(handles.text2, 'String', 'LOAD FINISHED');
-    
+%     
     % filter
     k = 1;
     lenP = length(pose7);
@@ -164,7 +164,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
         end
         
         % show ID
-%         text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 5);
+        text(pose7{i}(1,1), pose7{i}(1,2), pose7{i}(1,3), num2str(pose7{i}(1, 10)), 'FontSize', 8);
         
         hold on;
         axis equal;

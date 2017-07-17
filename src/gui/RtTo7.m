@@ -1,13 +1,15 @@
 function [ pose7 ] = RtTo7( poseRt )
 %RTTO7 Summary of this function goes here
 %   Detailed explanation goes here
-
+    
+    poseRt(1:3, 1:3)
     rotm = poseRt(1:3, 1:3);
     quat = rotm2quat(rotm);
     
     pose7 = zeros(1, 10);
     
     % 1-3 XYZ; 4-7 quaternion
+    poseRt(1, 4)
     pose7(1, 1) = poseRt(1, 4);
     pose7(1, 2) = poseRt(2, 4);
     pose7(1, 3) = poseRt(3, 4);

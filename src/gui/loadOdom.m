@@ -7,6 +7,7 @@ function [ pose ] = loadOdom( odom, blank)
     count = 1;
     for i = 1 : 5*(blank + 1) : length(odom)
         pose{count} = odom(i+1 : i+4, :);
+        pose{count}
         count = count + 1;
     end
     

@@ -7,7 +7,9 @@ function [ point ] = loadData( fileName, blank)
 %     [height, width]=size(raw);
     
     count = 1;
-    for i = 1 : blank : 1000000
+    for i = 1 : blank : 990908
+        % 990908 in JD ?
+        % 1000000 in 2.0 ?
         point{count} = raw(i, :);  
         count = count + 1;
     end
