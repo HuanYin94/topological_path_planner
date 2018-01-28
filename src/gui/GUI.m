@@ -77,6 +77,10 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in pushbutton2.
 %  Load Raw Data
+
+% poses
+% X Y Z Q1 Q2 Q3 Q4 P? F? ID
+
 function pushbutton2_Callback(hObject, eventdata, handles)
 
     set(handles.text2, 'String', 'START LOADING');
@@ -84,45 +88,56 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
 %     point = loadData('/home/yh/wholeMap.txt', 100);
     
-    in = evalin('base', 'trajectory');
-    poseRt = loadOdom(in, 30);
+    in = evalin('base', 'tmptmp');
     
-    
-    for i = 1 : 1 : length(poseRt)
-        pose7{i} = RtTo7(poseRt{i}); 
+    % Tianjin
+%     poseRt = loadOdom(in, 30);
+%     
+%     
+%     for i = 1 : 1 : length(poseRt)
+%         pose7{i} = RtTo7(poseRt{i}); 
+%     end
+
+    % TianJin
+    for i=1:length(in)
+       pose7{i} = zeros(1, 10);
+       pose7{i}(1,1:7) = in(i, :);
+      pose7{i}(1,10) = i;
+
     end
-    
+     
     % give ID
-    for i = 1 : 1 : length(poseRt)
-        pose7{i}(1, 10) = i;
-    end
+%     for i = 1 : 1 : length(poseRt)
+%         pose7{i}(1, 10) = i;
+%     end
+
 %         
     set(handles.text2, 'String', 'LOAD FINISHED');
 %     
     % filter
-    k = 1;
-    lenP = length(pose7);
-    while k < lenP
-        k
-        inputXY = pose7{k}(1, 1:2);
-        
-         i = k + 1;
-         while i <= lenP
-            pointXY = pose7{i}(1, 1:2);
-            
-            dist = pdist2(inputXY, pointXY);
-%             [i dist]
-            if dist <= 4
-                pose7(i) = [];
-                i = i - 1;
-                lenP = length(pose7);
-            end
-            
-            i = i + 1;
-         end
-        
-         k = k + 1;
-    end
+%     k = 1;
+%     lenP = length(pose7);
+%     while k < lenP
+%         k
+%         inputXY = pose7{k}(1, 1:2);
+%         
+%          i = k + 1;
+%          while i <= lenP
+%             pointXY = pose7{i}(1, 1:2);
+%             
+%             dist = pdist2(inputXY, pointXY);
+% %             [i dist]
+%             if dist <= 4
+%                 pose7(i) = [];
+%                 i = i - 1;
+%                 lenP = length(pose7);
+%             end
+%             
+%             i = i + 1;
+%          end
+%         
+%          k = k + 1;
+%     end
 
 
 % --- Executes on button press in pushbutton3.
