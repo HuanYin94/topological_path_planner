@@ -90,54 +90,53 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     
     in = evalin('base', 'tmptmp');
     
-    % Tianjin
-%     poseRt = loadOdom(in, 30);
-%     
-%     
-%     for i = 1 : 1 : length(poseRt)
-%         pose7{i} = RtTo7(poseRt{i}); 
-%     end
-
-    % TianJin
-    for i=1:length(in)
-       pose7{i} = zeros(1, 10);
-       pose7{i}(1,1:7) = in(i, :);
-      pose7{i}(1,10) = i;
-
+    % origin
+    poseRt = loadOdom(in, 30);
+    
+    
+    for i = 1 : 1 : length(poseRt)
+        pose7{i} = RtTo7(poseRt{i}); 
     end
-     
-    % give ID
-%     for i = 1 : 1 : length(poseRt)
-%         pose7{i}(1, 10) = i;
+
+    % TianJin Binhai Institute, keyframe poses
+%     for i=1:length(in)
+%        pose7{i} = zeros(1, 10);
+%        pose7{i}(1,1:7) = in(i, :);
+%       pose7{i}(1,10) = i;
 %     end
+     
+    % give ID, origin
+    for i = 1 : 1 : length(poseRt)
+        pose7{i}(1, 10) = i;
+    end
 
 %         
     set(handles.text2, 'String', 'LOAD FINISHED');
 %     
     % filter
-%     k = 1;
-%     lenP = length(pose7);
-%     while k < lenP
-%         k
-%         inputXY = pose7{k}(1, 1:2);
-%         
-%          i = k + 1;
-%          while i <= lenP
-%             pointXY = pose7{i}(1, 1:2);
-%             
-%             dist = pdist2(inputXY, pointXY);
-% %             [i dist]
-%             if dist <= 4
-%                 pose7(i) = [];
-%                 i = i - 1;
-%                 lenP = length(pose7);
-%             end
-%             
-%             i = i + 1;
-%          end
-%         
-%          k = k + 1;
-%     end
+    k = 1;
+    lenP = length(pose7);
+    while k < lenP
+        k
+        inputXY = pose7{k}(1, 1:2);
+        
+         i = k + 1;
+         while i <= lenP
+            pointXY = pose7{i}(1, 1:2);
+            
+            dist = pdist2(inputXY, pointXY);
+%             [i dist]
+            if dist <= 4
+                pose7(i) = [];
+                i = i - 1;
+                lenP = length(pose7);
+            end
+            
+            i = i + 1;
+         end
+        
+         k = k + 1;
+    end
 
 
 % --- Executes on button press in pushbutton3.
@@ -508,14 +507,14 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 
     global pose7 edgeLists;
 
-    pose7Mat = load('result/wy_0717_pose7');
+    pose7Mat = load('result/tianjin_pose7_0128.txt');
     
     [a, b] = size(pose7Mat);
     for i = 1 : 1 : a
        pose7{i} = pose7Mat(i, :);
     end
     
-    edgeLists = load('result/wy_0717_edgeLists');
+    edgeLists = load('result/tianjin_edge_0128.txt');
     
     set(handles.text2, 'String', 'LISTS LOADED');
 
