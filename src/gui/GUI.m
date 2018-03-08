@@ -88,7 +88,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
 %     point = loadData('/home/yh/wholeMap.txt', 100);
     
-    in = evalin('base', 'trajectoryindoor3');
+    in = evalin('base', 'trajectory02');
     
     % origin
     poseRt = loadOdom(in, 10);
