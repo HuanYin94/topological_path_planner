@@ -91,7 +91,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     in = evalin('base', 'trajectory02');
     
     % origin
-    poseRt = loadOdom(in, 10);
+    poseRt = loadOdom(in, 20);
     
     
     for i = 1 : 1 : length(poseRt)
