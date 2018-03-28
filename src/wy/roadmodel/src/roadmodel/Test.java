@@ -10,8 +10,8 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String fn1 = "yanjiuyuan_0313_edgeLists.txt";   // edge file name
-		String fn2 = "poseWorldtoLocal_0313.txt";  // pose file name
+		String fn1 = "0328_edgeLists.txt";   // edge file name
+		String fn2 = "0328_poseWorldToLocal.txt";  // pose file name
 		String fnrm = "roadmodel.json"; // roadmodel file name
 		RMFeeder rf = new RMFeeder();
 		RoadModel rm = new RoadModel();

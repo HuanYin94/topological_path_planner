@@ -88,7 +88,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     global point poseRt pose7;
 %     point = loadData('/home/yh/wholeMap.txt', 100);
     
-    in = evalin('base', 'trajectory02');
+    in = evalin('base', 'trajectory0328');
     
     % origin
     poseRt = loadOdom(in, 20);
@@ -507,7 +507,7 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 
     global pose7 edgeLists;
 
-    pose7Mat = load('result/jiche_poses.txt');
+    pose7Mat = load('result/yanjiuyuan_0313_pose7.txt');
     
     [a, b] = size(pose7Mat);
     for i = 1 : 1 : a
