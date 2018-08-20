@@ -14,21 +14,21 @@ v2.0 with GUI
 
 A point(pose7) = 3 XYZ + 4 quantn + TURN BIT + FORK BIT + ID
 
-Edge = ID1 + ID2
+Edge = ID1, ID2
 
-BUTTON:
+### BUTTON:
 
-lOAD RAW DATA:		LOAD from workspace
+`load Raw Data`	LOAD from workspace
 
-REFRESH:		Re-draw everything(edges, points, id)
+`Refresh`:		Re-draw everything(edges, points, id)
 
-ADD PATH-POINTS:	Add path-points
+`Add Path-Points`	Add path-points
 
-REMOVE PATH-POINTS:	Remove path-points, need refresh after cliked several times(ENter)
+`Remove Path-Points`	Remove path-points, need refresh after cliked several times(ENter)
 
-ADD TURN-POINTS:	NO USE NOW
+`Add Turn-Points`	NO USE NOW
 
-REMOVE TURN-POINTS:	NO USE NOW
+`Remove Turn-Points`	NO USE NOW
 
 ADD FORK-POINTS:	FORK BIT OF A POINT IS SET TO 1
 
