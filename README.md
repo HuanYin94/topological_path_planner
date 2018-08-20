@@ -20,26 +20,26 @@ Edge = ID1, ID2
 
 `load Raw Data`	LOAD from workspace
 
-`Refresh`:		Re-draw everything(edges, points, id)
+`Refresh`:		         Re-draw everything(edges, points, id)
 
-`Add Path-Points`	Add path-points
+`Add Path-Points`	     Add path-points
 
-`Remove Path-Points`	Remove path-points, need refresh after cliked several times(ENter)
+`Remove Path-Points`	 Remove path-points, need refresh after cliked several times(ENter)
 
-`Add Turn-Points`	NO USE NOW
+`Add Turn-Points`	     Not used now
 
-`Remove Turn-Points`	NO USE NOW
+`Remove Turn-Points`	 Not used now
 
-ADD FORK-POINTS:	FORK BIT OF A POINT IS SET TO 1
+`ADD Fork-Points`      Fork bit of a path-point is set as 1
 
-REMOVE TURN-POINTS:	SET TO 0
+`Remove Turn-Points`	 Set as 0
 
-ADD EDGES: 		SELECT 2 points, Add to the edgeLists
+`Add Edges`	           Select 2 points, add to the edgeLists
 
-REMOVE EDGES:		SELECT 2 points, REMOVE the edges from edgeLists
+`Remove Edges`      	 Select 2 points, remove the edges from edgeLists
 
-Auto EDGES:  		CAREFUL, generate the edges according to ID in pose7?
+`Auto Edges`  		     Be careful, generate the edges according to the order IDs(pose7)
 
-Load LIST:		LOAD the result from outside 2 txts
+`Load List`		         LOAD the result from outside 2 txts
 
-EXPORT:			To see something
+`Export`        			 To see something
